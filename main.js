@@ -1,4 +1,4 @@
-var apibit = "https://economia.awesomeapi.com.br/json/last/BTC-BRL,USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,DOGE-BRL,ETH-BRL,JPY-BRL,BRL-JPY"
+var apibit = "https://economia.awesomeapi.com.br/json/last/BTC-BRL,USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,DOGE-BRL,ETH-BRL,JPY-BRL,BRL-JPY,LTC-BRL"
 var request = new XMLHttpRequest()
 var in_BRL = document.querySelector('.inbr')
 var in_BTC = document.querySelector('.inbtc')
@@ -12,6 +12,7 @@ var valor_usd
 var valor_eur
 var valor_eth
 var valor_ie
+var valor_ltc
 
 request.open('GET', apibit, true)
 request.send()
@@ -27,6 +28,7 @@ request.onload = function(){
         valor_eth = response.ETHBRL.ask
         valor_ie = response.JPYBRL.ask
         valor_brlie = response.BRLJPY.ask
+        valor_ltc = response.LTCBRL.ask
         in_BTC.value = 1
         in_BRL.value = valor_brl
     }
@@ -72,6 +74,12 @@ function ienes(){
     in_BTC.value = 1
     in_BRL.value = valor_ie
 }
+function litecoin(){
+    status = "litecoin"
+    document.querySelector('#bitt').innerHTML = "Litecoin:"
+    in_BTC.value = 1
+    in_BRL.value = valor_ltc
+}
 
 
 
@@ -100,6 +108,10 @@ function ienes(){
         else if(status == "ienes"){
             var tt = parseFloat(in_BTC.value) * valor_ie
             in_BRL.value = String(tt.toFixed(2)).replace('NaN', valor_ie)
+        }
+        else if(status == "litecoin"){
+            var tt = parseFloat(in_BTC.value) * valor_ltc
+            in_BRL.value = String(tt.toFixed(2)).replace('NaN', valor_ltc)
         }
     })
 
