@@ -25,6 +25,7 @@ input{
     display: flex;
     justify-content: center;
 }
+
 #erro{
     font-size: 5vw;
     color: white;

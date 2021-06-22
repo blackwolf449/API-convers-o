@@ -1,4 +1,4 @@
-var apibit = "https://economia.awesomeapi.com.br/json/last/BTC-BRL,USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,DOGE-BRL,ETH-BRL"
+var apibit = "https://economia.awesomeapi.com.br/json/last/BTC-BRL,USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,DOGE-BRL,ETH-BRL,JPY-BRL,BRL-JPY"
 var request = new XMLHttpRequest()
 var in_BRL = document.querySelector('.inbr')
 var in_BTC = document.querySelector('.inbtc')
@@ -7,9 +7,11 @@ var valor_doge
 var valor_brl
 var valor_brlusd
 var valor_brleur
+var valor_brlie
 var valor_usd
 var valor_eur
 var valor_eth
+var valor_ie
 
 request.open('GET', apibit, true)
 request.send()
@@ -23,6 +25,8 @@ request.onload = function(){
         valor_brleur = response.BRLEUR.ask
         valor_doge = response.DOGEBRL.ask
         valor_eth = response.ETHBRL.ask
+        valor_ie = response.JPYBRL.ask
+        valor_brlie = response.BRLJPY.ask
         in_BTC.value = 1
         in_BRL.value = valor_brl
     }
@@ -62,6 +66,12 @@ function ethereum(){
     in_BTC.value = 1
     in_BRL.value = valor_eth
 }
+function ienes(){
+    status = "ienes"
+    document.querySelector('#bitt').innerHTML = "Iene:"
+    in_BTC.value = 1
+    in_BRL.value = valor_ie
+}
 
 
 
@@ -87,6 +97,10 @@ function ethereum(){
             var tt = parseFloat(in_BTC.value) * valor_eth
             in_BRL.value = String(tt.toFixed(2)).replace('NaN', valor_eth)
         }
+        else if(status == "ienes"){
+            var tt = parseFloat(in_BTC.value) * valor_ie
+            in_BRL.value = String(tt.toFixed(2)).replace('NaN', valor_ie)
+        }
     })
 
     in_BRL.addEventListener('input', function(){
@@ -98,6 +112,10 @@ function ethereum(){
             var tt = parseFloat(in_BRL.value) * valor_brleur
             in_BTC.value = String(tt.toFixed(2)).replace('NaN', valor_brleur)
         } 
+        else if(status == "ienes"){
+            var tt = parseFloat(in_BRL.value) * valor_brlie
+            in_BTC.value = String(tt.toFixed(2)).replace('NaN', valor_brlie)
+        }
         else{
         }
     })
