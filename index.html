@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar API</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="fundo">
+    <div id="menu">
+        <div id="menu2">
+            <li><a onclick="bitcoin()">Bitcoin</a></li>
+            <li><a onclick="dogecoin()">Dogecoin</a></li>
+            <li><a onclick="ethereum()">Ethereum</a></li>
+            <li><a onclick="dolar()">Dolar</a></li>
+            <li><a onclick="euro()">Euro</a></li>
+        </div>   
+    </div>
+    <div id="conteudo">
+        <h1>Bem-vindo ao conversor de criptomoedas e moedas</h1>
+    
+        <label id="bitt">Bitcoin:</label>
+        <input class="inbtc" type="text" name="btc">
+        <label id="lbl1"> = </label>
+        <label id="brll">Reais:</label>
+        <input class="inbr" type="text" name="reais">
+    
+        <h1 id="erro"></h1>
+    </div>    
+    <script src="main.js"></script>
+</body>
+</html>

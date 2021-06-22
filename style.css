@@ -1,0 +1,103 @@
+#fundo{
+    height: 100%;
+    background-image: url(https://getwallpapers.com/wallpaper/full/c/8/9/414727.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    background-size: 100%;
+    background-size: cover;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+input{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 1vw;
+    border-radius: 15vw;
+}
+#lbl1{
+    color: white;
+    font-size: large;
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1vw;
+}
+#erro{
+    font-size: 5vw;
+    color: white;
+}
+/*div da conversão*/
+#conteudo{
+    margin-top: -24vw;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: -25vw;
+    border-color: black;
+}
+#bitt{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#brll{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/*menu*/
+#menu{
+    background-color: rgb(184, 183, 183);
+    border-radius: 1vw;
+    width: 10vw;
+    height: 30vw;
+    margin-top: 9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+#menu a{
+    text-decoration: none;
+    color: black;
+    transition-duration: 0.8s;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+#menu li{
+    text-decoration: none;
+    background-color: transparent;
+    display: flex;
+    text-align: center;
+    transition-duration: 1s;
+    width: 5vw;
+    height: 2vw;
+    border-radius: 2vw;
+    margin-top: 1vw;
+    cursor: pointer;
+}
+#menu li:hover{
+    border-radius: 2vw;
+    width: 5vw;
+    height: 2vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    transition-duration: 1s;
+}
+#menu a:hover{
+    display: flex;
+    margin: 0 auto;
+    color: white;
+    transition-duration: 0.8s;
+}
